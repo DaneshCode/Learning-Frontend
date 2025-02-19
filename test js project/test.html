@@ -16,37 +16,94 @@
     />
   </head>
   <body>
-    <div id="test-1" class="test-1">
-      test-1<button
-        style="position: absolute; bottom: 0"
-        onclick="change_background_color()"
-      >
-        change background color</button
-      ><button style="position: absolute; top: 0" onclick="change_color()">
-        change color</button
-      ><button style="position: absolute; left: 0" onclick="zoom_out()">
-        <i class="uil uil-search-minus"></i></button
-      ><button style="position: absolute; right: 0" ; onclick="zoom_in()">
-        <i class="uil uil-search-plus"></i>
-      </button>
-    </div>
-    <br /><br /><br /><br />
+    <section>
+      <div class="output-container">
+        <h4 class="">
+          Q1: How can we create a random background color for an element?
+        </h4>
+        <h4 class="">Q2: How can we change the text color dynamically?</h4>
+        <h4 class="">Q3: How can we implement text size control?</h4>
+        <br /><br />
+        <div id="test-1" class="test-1">
+          test-1
+          <!-- Background color control button -->
+          <button
+            style="position: absolute; bottom: 0"
+            onclick="change_background_color()"
+          >
+            change background
+          </button>
+          <!-- Text color control button -->
+          <button style="position: absolute; top: 0" onclick="change_color()">
+            change text color
+          </button>
+          <!-- Text size reduction button -->
+          <button style="position: absolute; left: 0" onclick="zoom_out()">
+            <i class="uil uil-search-minus"></i>
+          </button>
+          <!-- Text size increase button -->
+          <button style="position: absolute; right: 0" onclick="zoom_in()">
+            <i class="uil uil-search-plus"></i>
+          </button>
+        </div>
 
-    <div class="lamp">
-      <img id="turn_off" src="./images/pic_bulboff.gif" alt="turn off" />
-      <div class="button">
-        <button onclick="turn_on()">turn on</button>
-        <button onclick="turn_off()">turn off</button>
+        <br /><br /><br /><br />
+
+        <h4 class="">
+          Q4: How can we change an image source to create light on/off effects?
+        </h4>
+        <div class="lamp">
+          <img id="turn_off" src="./images/pic_bulboff.gif" alt="turn off" />
+          <div class="button">
+            <button onclick="turn_on()">turn on</button>
+            <button onclick="turn_off()">turn off</button>
+          </div>
+        </div>
+        <br /><br /><br />
+        <h4>Q5: How does a break statement work in a loop?</h4>
+        <div id="output"></div>
+
+        <h4>Q6: How does continue statement skip iterations in a loop?</h4>
+        <div id="output2"></div>
+
+        <h4>Q7: How do nested loops work in JavaScript?</h4>
+        <div id="output3"></div>
+
+        <h4>Q8: How can we modify array elements by index?</h4>
+        <div id="output5"></div>
+
+        <h4>Q9: How can we calculate the average of array numbers?</h4>
+        <div class="array-calculations">
+          <div>Using reduce method:</div>
+          <div id="output6"></div>
+          <div>Using for loop:</div>
+          <div id="output7"></div>
+        </div>
+
+        <h4>Q10: What's the difference between slice and splice methods?</h4>
+        <div id="output4"></div>
+
+        <h4>Q11: How can we find maximum and minimum values in an array?</h4>
+        <div id="output8"></div>
+
+        <h4 class="">JavaScript Advanced Examples:</h4>
+
+        <h4>Q12: How do we create a basic function to add two numbers?</h4>
+        <div id="output9"></div>
+
+        <h4>Q13: How can we use rest parameters to sum multiple numbers?</h4>
+        <div id="output10"></div>
+
+        <h4>
+          Q14: How can we calculate power using the exponentiation operator?
+        </h4>
+        <div id="output11"></div>
+
+        <h4>Q15: How can we calculate power using a for loop?</h4>
+        <div id="output12"></div>
       </div>
-    </div>
-    <div id="output"></div>
-    <div id="output2"></div>
-    <div id="output3"></div>
-    <div id="output4"></div>
-    <div id="output5"></div>
-    <div id="output6"></div>
-    <div id="output7"></div>
-    <div id="output8"></div>
+    </section>
+    <br /><br /><br />
   </body>
   <script src="./test.js"></script>
 </html>

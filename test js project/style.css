@@ -73,6 +73,7 @@ a.button:hover {
   }
 }
 
+/* Updated test-1 styles */
 .test-1 {
   display: flex;
   position: relative;
@@ -80,24 +81,78 @@ a.button:hover {
   align-items: center;
   justify-content: center;
   height: 20rem;
-  width: 20rem;
+  width: 90%;
+  max-width: 20rem;
   padding: 5rem;
   border-radius: 0.7rem;
   font-size: 2rem;
+  margin: 0 auto;
+}
+
+/* Updated lamp section styles */
+.lamp {
+  position: relative;
+  width: 90%;
+  max-width: 20rem;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .lamp img {
   width: 100px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  margin-bottom: 2rem;
+  left: auto;
+  transform: none;
 }
 
 .lamp .button {
-  margin-top: 150px; /* فاصله دکمه‌ها از تصاویر */
-  width: 20rem;
+  margin-top: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .test-1 {
+    height: 15rem;
+    padding: 3rem;
+  }
+
+  .lamp {
+    height: 180px;
+  }
+
+  .lamp img {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .test-1 {
+    height: 12rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .lamp {
+    height: 160px;
+  }
+
+  .lamp img {
+    width: 60px;
+    margin-bottom: 1.5rem;
+  }
+
+  .lamp .button {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
 }
 
 @media screen and (max-width: 360px) {
@@ -113,7 +168,11 @@ a.button:hover {
 #output5,
 #output6,
 #output7,
-#output8 {
+#output8,
+#output9,
+#output10,
+#output11,
+#output12 {
   margin: 3rem;
   display: flex;
   justify-content: center;
@@ -121,4 +180,15 @@ a.button:hover {
   font-size: 1rem;
   flex-wrap: wrap;
   text-align: justify;
+}
+
+.output-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.output-container h4 {
+  color: #6a3093;
+  margin: 1.5rem 0 0.5rem 0;
+  text-align: center;
 }
