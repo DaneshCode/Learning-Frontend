@@ -1,14 +1,37 @@
-// First: Define all functions
+/// Add event listeners when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function () {
+  // Background color control
+  document
+    .getElementById('bgColorBtn')
+    .addEventListener('click', change_background_color);
+
+  // Text color control
+  document
+    .getElementById('textColorBtn')
+    .addEventListener('click', change_color);
+
+  // Text size controls
+  document.getElementById('zoomOutBtn').addEventListener('click', zoom_out);
+  document.getElementById('zoomInBtn').addEventListener('click', zoom_in);
+
+  // Light bulb controls
+  document.getElementById('turnOnBtn').addEventListener('click', turn_on);
+  document.getElementById('turnOffBtn').addEventListener('click', turn_off);
+});
+
+// Q: How can we create a random background color for an element?
 function change_background_color() {
   const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
   document.getElementById('test-1').style.backgroundColor = randomColor;
 }
 
+// Q: How can we change the text color dynamically?
 function change_color() {
   const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
   document.getElementById('test-1').style.color = randomColor;
 }
 
+// Q: How can we implement text size reduction?
 function zoom_out() {
   const element = document.getElementById('test-1');
   const currentSize = parseFloat(window.getComputedStyle(element).fontSize);
@@ -17,6 +40,7 @@ function zoom_out() {
   }
 }
 
+// Q: How can we implement text size increase?
 function zoom_in() {
   const element = document.getElementById('test-1');
   const currentSize = parseFloat(window.getComputedStyle(element).fontSize);
@@ -25,27 +49,15 @@ function zoom_in() {
   }
 }
 
+// Q: How can we change an image source to create a light-on effect?
 function turn_on() {
   document.getElementById('turn_off').src = './images/pic_bulbon.gif';
 }
 
+// Q: How can we change an image source to create a light-off effect?
 function turn_off() {
   document.getElementById('turn_off').src = './images/pic_bulboff.gif';
 }
-
-// Then: Add event listeners after DOM loads
-document.addEventListener('DOMContentLoaded', () => {
-  document
-    .getElementById('bgColorBtn')
-    .addEventListener('click', change_background_color);
-  document
-    .getElementById('textColorBtn')
-    .addEventListener('click', change_color);
-  document.getElementById('zoomOutBtn').addEventListener('click', zoom_out);
-  document.getElementById('zoomInBtn').addEventListener('click', zoom_in);
-  document.getElementById('turnOnBtn').addEventListener('click', turn_on);
-  document.getElementById('turnOffBtn').addEventListener('click', turn_off);
-});
 
 // Q: How does a break statement work in a loop?
 for (let i = 0; i <= 10; i++) {
