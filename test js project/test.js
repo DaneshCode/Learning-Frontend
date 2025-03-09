@@ -193,3 +193,16 @@ function powerLoop(base, exponent) {
   return result;
 }
 powerLoop(2, 10);
+
+//Q16 create a sidebar
+
+const sideBtn = document.querySelector('.side_btn');
+const side = document.querySelector('.side');
+
+sideBtn.addEventListener('click', () => {
+  side.classList.toggle('active');
+  // Change button text and icon based on sidebar state
+  sideBtn.innerHTML = side.classList.contains('active')
+    ? '&times close' // × symbol for close
+    : '&#9776 open'; // ☰ symbol for hamburger menu
+});
