@@ -206,3 +206,41 @@ sideBtn.addEventListener('click', () => {
     ? '&times close' // × symbol for close
     : '&#9776 open'; // ☰ symbol for hamburger menu
 });
+
+function add7(num) {
+  return num + 7;
+}
+console.log(add7(10));
+
+function multiple(num1, num2) {
+  return num1 * num2;
+}
+console.log(multiple(5, 10));
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+console.log(capitalize('hello')); // خروجی: Hello
+console.log(capitalize('WORLD')); // خروجی: World
+
+function lastletter(str) {
+  return str.charAt(str.length - 1);
+}
+console.log(lastletter('hello world'));
+
+let answer = parseInt(
+  prompt('Please enter the number you would like to FizzBuzz up to: '),
+);
+
+for (let i = 1; i <= answer; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log('FizzBuzz');
+  } else if (i % 3 === 0) {
+    console.log('Fizz');
+  } else if (i % 5 === 0) {
+    console.log('Buzz');
+  } else {
+    console.log(i);
+  }
+}
+
