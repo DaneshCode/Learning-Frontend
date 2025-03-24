@@ -207,15 +207,21 @@ sideBtn.addEventListener('click', () => {
     : '&#9776 open'; // ☰ symbol for hamburger menu
 });
 
+// ==================================================================
+
 function add7(num) {
   return num + 7;
 }
 console.log(add7(10));
 
+// ==========================================================
+
 function multiple(num1, num2) {
   return num1 * num2;
 }
 console.log(multiple(5, 10));
+
+// =====================================================
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
@@ -223,24 +229,194 @@ function capitalize(str) {
 console.log(capitalize('hello')); // خروجی: Hello
 console.log(capitalize('WORLD')); // خروجی: World
 
+// ================================================================
+
 function lastletter(str) {
   return str.charAt(str.length - 1);
 }
 console.log(lastletter('hello world'));
 
-let answer = parseInt(
-  prompt('Please enter the number you would like to FizzBuzz up to: '),
+// ==============================================================
+
+// let answer = parseInt(
+//   prompt('Please enter the number you would like to FizzBuzz up to: '),
+// );
+
+// for (let i = 1; i <= answer; i++) {
+//   if (i % 3 === 0 && i % 5 === 0) {
+//     console.log('FizzBuzz');
+//   } else if (i % 3 === 0) {
+//     console.log('Fizz');
+//   } else if (i % 5 === 0) {
+//     console.log('Buzz');
+//   } else {
+//     console.log(i);
+//   }
+// }
+
+// ========================================================
+
+function sumOfTripledEvents(arr) {
+  return arr
+    .filter((num) => num % 2 === 0)
+    .map((num) => num * 3)
+    .reduce((acc, num) => acc + num, 0);
+}
+console.log(
+  sumOfTripledEvents([1, 2, 3, 4, 5, 6, 7, 8, 9]), // Output: 60
 );
 
-for (let i = 1; i <= answer; i++) {
-  if (i % 3 === 0 && i % 5 === 0) {
-    console.log('FizzBuzz');
-  } else if (i % 3 === 0) {
-    console.log('Fizz');
-  } else if (i % 5 === 0) {
-    console.log('Buzz');
-  } else {
-    console.log(i);
-  }
+// =====================================================
+
+function camelize(str) {
+  return str
+    .split('-') // جدا کردن با '-'
+    .map((word, index) =>
+      index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1),
+    ) // حروف اول بقیه کلمات را بزرگ کن
+    .join(''); // به هم وصل کن
 }
 
+console.log(camelize('my-short-string')); // "myShortString"
+console.log(camelize('hello-world-test')); // "helloWorldTest"
+console.log(camelize('javascript-is-fun')); // "javascriptIsFun"
+
+// ===========================================================
+
+function filterRange(arr, a, b) {
+  return arr.filter((item) => item >= a && item <= b);
+}
+
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+console.log(filtered); // [3, 1] (اعداد بین 1 و 4)
+console.log(arr); // [5, 3, 8, 1] (بدون تغییر)
+
+// ===========================================================
+
+function filterRangeInPlace(arr, a, b) {
+  return arr.filter((item) => item >= a && item <= b);
+}
+console.log(filterRangeInPlace([5, 3, 8, 1], 1, 4)); // [3, 1] (اعداد بین 1 و 4)
+
+// =========================================================
+
+function sortDescending(arr) {
+  return arr.sort((a, b) => b - a);
+}
+
+console.log(sortDescending([5, 2, 1, -10, 8]));
+//  [8, 5, 2, 1, -10]
+
+// ======================================================
+
+function copySorted(arrr) {
+  return arrr.slice().sort();
+}
+let arrr = ['HTML', 'JavaScript', 'CSS'];
+let sorted = copySorted(arrr);
+console.log(sorted); // CSS, HTML, JavaScript
+console.log(arrr); // HTML, JavaScript, CSS (no changes)
+
+// ======================================================
+
+let john = { name: 'John', age: 25 };
+let pete = { name: 'Pete', age: 30 };
+let mary = { name: 'Mary', age: 28 };
+
+let users = [john, pete, mary];
+
+let names = users.map((item) => item.name);
+
+console.log(names); // John, Pete, Mary
+// ============================================================
+
+let john1 = { name: 'John', surname: 'Smith', id: 1 };
+let pete1 = { name: 'Pete', surname: 'Hunt', id: 2 };
+let mary1 = { name: 'Mary', surname: 'Key', id: 3 };
+
+let users1 = [john1, pete1, mary1];
+
+let usersMapped = users1.map((item) => ({
+  fullName: `${item.name} ${item.surname}`,
+  id: item.id,
+}));
+
+console.log(usersMapped[0].id); // 1 ✅
+console.log(usersMapped[0].fullName); // "John Smith" ✅
+
+// ===========================================================
+
+function sortByAge(arr2) {
+  return arr2.sort((a, b) => a.age - b.age);
+}
+
+let john2 = { name: 'John', age: 25 };
+let pete2 = { name: 'Pete', age: 30 };
+let mary2 = { name: 'Mary', age: 28 };
+
+let arr2 = [pete2, john2, mary2];
+
+sortByAge(arr2);
+
+console.log(arr2[0].name); // John
+console.log(arr2[1].name); // Mary
+console.log(arr2[2].name); // Pete
+
+// ===========================================================
+
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+
+let arr3 = [1, 2, 3];
+
+console.log(shuffle(arr3));
+// arr = [3, 2, 1]
+console.log(shuffle(arr3));
+// arr = [3, 1, 2]
+console.log(shuffle(arr3));
+// arr = [3, 2, 1]
+
+// ========================================================
+function getAverageAge(users) {
+  return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+}
+
+let john4 = { name: 'John', age: 25 };
+let pete4 = { name: 'Pete', age: 30 };
+let mary4 = { name: 'Mary', age: 29 };
+
+let arr4 = [john4, pete4, mary4];
+
+console.log(getAverageAge(arr4)); // (25 + 30 + 29) / 3 = 28
+
+// ===================================================
+
+function unique(arr) {
+  let result = [];
+
+  for (let str of arr) {
+    if (!result.includes(str)) {
+      result.push(str);
+    }
+  }
+
+  return result;
+}
+
+let strings = [
+  'Hare',
+  'Krishna',
+  'Hare',
+  'Krishna',
+  'Krishna',
+  'Krishna',
+  'Hare',
+  'Hare',
+  ':-O',
+];
+
+console.log(unique(strings)); // Hare, Krishna, :-O
